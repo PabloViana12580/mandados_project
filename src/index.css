@@ -3,3 +3,20 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.light {
+  border: 1px solid black;
+  border-radius: 50%;
+  height: 300px;
+  transition: 0.25s;
+  width: 300px;
+}
+
+.light.on {
+  background: yellow;
+  transform: scale(1.1);
+}
+
+.light.off {
+  background: #333;
+}

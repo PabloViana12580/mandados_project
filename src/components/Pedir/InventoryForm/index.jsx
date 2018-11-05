@@ -2,7 +2,7 @@ import uuid from 'uuid-v4';
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 
-import * as actions from '../../actions';
+import * as actions from '../../../actions';
 import './index.css'
 
 

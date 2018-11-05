@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 
-import * as selectors from '../../reducers';
+import * as selectors from '../../../reducers';
 import InventoryItem from '../InventoryItem';
 import './index.css';
 

@@ -6,5 +6,3 @@ export const PRODUCT_ADDED_TO_CART = 'PRODUCT_ADDED_TO_CART';
 
 
 
-
-

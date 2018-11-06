@@ -21,3 +21,7 @@ export const addToCart = id => ({
     id,
   }
 });
+
+export const UserCreationConfirmed = () => ({
+  type: types.USER_CONFIRMED,
+});

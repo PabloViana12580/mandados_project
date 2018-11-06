@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-
 import Inventory from '../Pedir/Inventory';
 import CartTotal from '../Pedir/Pedido';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";

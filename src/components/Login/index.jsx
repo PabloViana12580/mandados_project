@@ -1,35 +1,48 @@
 import React, {Fragment} from 'react';
 import {connect} from 'react-redux';
-import * as actions from '../../actions';
-import './index.css';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
-class form extends React.Component{
+class login extends React.Component{
     render(){
-     const {onSubmit} = this.props;
-            <div>
-    
+    const {onSubmit} = this.props;
+    return(
+     
+            <div class = "login">
+            <p> User </p>
             <input type="text" ref = {node => {this.title = node; }} />
+            <br/>
 
+            <p> Password</p>
             <input type="text" ref = {node => {this.content = node;} } />
-        
-            <button onClick={() => {
-                onSubmit(
-                this.title.value,
-                this.content.value
-                );
-                this.title.value = "";
-                this.content.value = "";
-                }
-            }> INGRESA </button>
+            <br/>
+            <br/>
+
+            <nav>
+            <Link to='/registro'>
+                <button onClick={
+                () => {
+                    onSubmit(
+                        this.title.value,
+                        this.content.value
+                        );
+                        this.title.value = "";
+                        this.content.value = "";
+                        }
+                    }> INGRESAR</button>
+            </Link>
+            </nav>
+            
         </div>
+    )
+
     }
 }
 
 export default connect(
     undefined,
-    dispatch => ({
+    (dispatch) => ({
       onSubmit(title, body){
-        dispatch(actions.addPost(uuid(), title, body, 0,[]));
+        console.log(title, body);   
       }
-    }) 
-   )(form);
+    })
+  )(login);

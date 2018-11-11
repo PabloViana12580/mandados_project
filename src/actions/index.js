@@ -25,3 +25,32 @@ export const addToCart = id => ({
 export const UserCreationConfirmed = () => ({
   type: types.USER_CONFIRMED,
 });
+
+
+
+export const addUser = (
+  id,
+  usuario,
+  password,
+  genero,
+  nombre,
+  correo,
+  apwllido,
+  dpi,
+  telefono,
+  edad,
+) => ({
+  type: types.USER_ADDED,
+  payload: {
+    id,
+    usuario,
+    password,
+    genero,
+    nombre,
+    correo,
+    apwllido,
+    dpi,
+    telefono,
+    edad,
+  }
+});

@@ -7,7 +7,7 @@ class login extends React.Component{
     const {onSubmit} = this.props;
     return(
      
-            <div class = "login">
+            <div className = "login">
             <p> User </p>
             <input type="text" ref = {node => {this.title = node; }} />
             <br/>

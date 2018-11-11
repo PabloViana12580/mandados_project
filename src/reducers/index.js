@@ -28,23 +28,3 @@ export const getCartTotal = (state) => {
 
   return total;
 };
-
-/*
-
-LOS SELECTORES
-
-const leState = {
-  inventory: {
-    byId: {},
-    order: []
-  },
-  cart: {
-    byId: {},
-    order: []
-  },
-};
-
-getProduct(leState, 3);
-
-
-*/

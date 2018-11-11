@@ -27,6 +27,17 @@ export const UserCreationConfirmed = () => ({
 });
 
 
+export const userLogin = (
+  user,
+  password
+) => ({
+  type: types.USER_LOGGED,
+  payload: {
+    user,
+    password
+  }
+});
+
 
 export const addUser = (
   id,
@@ -35,7 +46,7 @@ export const addUser = (
   genero,
   nombre,
   correo,
-  apwllido,
+  apellido,
   dpi,
   telefono,
   edad,
@@ -48,7 +59,7 @@ export const addUser = (
     genero,
     nombre,
     correo,
-    apwllido,
+    apellido,
     dpi,
     telefono,
     edad,

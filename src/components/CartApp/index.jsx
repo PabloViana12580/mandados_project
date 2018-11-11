@@ -10,11 +10,12 @@ const CartApp = () => (
         <Route exact path="/conductores" component={Conductores} />
         <Route exact path="/" component={Login}/>
         <Route exact path="/registro" component= {Registrar}/>
-        <Route exact path="/home" component= {Home}/>
+        <Route exact path="/compras" component= {Compras}/>
+        <Route exact path="/home" component={Home}/>
   </Fragment>
 );
 
-function Home() {
+function Compras() {
   return (
     <div>
          <Inventory />
@@ -32,6 +33,14 @@ function Login() {
   );
 }
 
+
+function Home(){
+  return(
+    <div>
+
+    </div>
+  );
+}
 
 function Registrar() {
   return (

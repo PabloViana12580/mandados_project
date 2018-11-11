@@ -1,6 +1,7 @@
 import React, {Fragment} from 'react';
 import {connect} from 'react-redux';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import * as actions from '../../actions'
 
 class login extends React.Component{
     render(){
@@ -18,7 +19,7 @@ class login extends React.Component{
             <br/>
 
             <nav>
-            <Link to='/registro'>
+            <Link to='/home'>
                 <button onClick={
                 () => {
                     onSubmit(
@@ -43,6 +44,7 @@ export default connect(
     (dispatch) => ({
       onSubmit(title, body){
         console.log(title, body);   
+        dispatch(actions.userLogin(title,body));
       }
     })
   )(login);

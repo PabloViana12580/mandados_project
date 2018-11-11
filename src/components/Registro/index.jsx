@@ -84,9 +84,9 @@ class registro extends React.Component{
 export default connect(
   undefined,
   dispatch => ({
-    onSubmit(nombre, password, correo, usuario, apellido,dpi){
-      console.log(nombre, password, correo);
-      dispatch(actions.addUser(uuid(), nombre, password, correo, usuario, apellido, dpi));
+    onSubmit(usuario,password,genero,nombre,correo,apwllido,dpi,telefono,edad,){
+      console.log(usuario,password,genero,nombre,correo,apwllido,dpi,telefono,edad,);
+      dispatch(actions.addUser(uuid(),usuario,password,genero,nombre,correo,apwllido,dpi,telefono,edad,));
     }
   })
 )(registro);

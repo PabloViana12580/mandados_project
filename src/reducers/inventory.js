@@ -58,13 +58,4 @@ export const getProducts = (state) => state.order.map(
 );
 
 
-/*
-
-state = {
-  byId: {},
-  order: []
-}
-
-*/
-
 export default inventory;

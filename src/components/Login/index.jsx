@@ -32,6 +32,8 @@ class login extends React.Component{
                     }> INGRESAR</button>
             </Link>
             </nav>
+
+            <nav><Link to='/registro'>Registro</Link></nav>
             
         </div>
     )
@@ -47,4 +49,4 @@ export default connect(
         dispatch(actions.userLogin(title,body));
       }
     })
-  )(login);
+  )(login)

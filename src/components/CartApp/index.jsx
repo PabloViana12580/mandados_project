@@ -4,12 +4,16 @@ import CartTotal from '../Pedir/Pedido';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Log from '../Login/index';
 import Registro from '../Registro/index';
+import RegistroConductor from '../registroConductor/index'
+import ConductoresList from '../Conductores/ConductoresList/index' 
+import data from '../Conductores/data/mandaderos.json'
 
 const CartApp = () => (
   <Fragment>
         <Route exact path="/conductores" component={Conductores} />
         <Route exact path="/" component={Login}/>
         <Route exact path="/registro" component= {Registrar}/>
+        <Route exact path="/registroC" component = {RegistrarConductor}/>
         <Route exact path="/compras" component= {Compras}/>
         <Route exact path="/home" component={Home}/>
   </Fragment>
@@ -36,8 +40,8 @@ function Login() {
 
 function Home(){
   return(
-    <div>
-
+    <div className = "page-container">
+    <ConductoresList  mandaderos= {data.mandaderos} />
     </div>
   );
 }
@@ -46,6 +50,15 @@ function Registrar() {
   return (
     <div>
       <Registro/>
+    </div>
+  );
+}
+
+
+function RegistrarConductor() {
+  return (
+    <div>
+      <RegistroConductor/>
     </div>
   );
 }

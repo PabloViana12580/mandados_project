@@ -1,0 +1,26 @@
+.ConductorList{
+    display:flex;
+    flex: 2;
+    flex-wrap: wrap;
+    flex-direction: row;
+ 
+    
+}
+.page-container{
+    width: 1200px;
+    margin: 10px auto;
+    padding: 3px
+}
+.ConductorList .ConductorListItem {
+    padding: 0.5rem 0.7rem;
+    width: 200px;
+    background-color: aliceblue;
+  
+}
+
+.ConductorList .ConductorListItem button{
+    padding: 0.5rem 0.7rem;
+    width: 200px;
+
+  
+}

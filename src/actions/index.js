@@ -22,11 +22,6 @@ export const addToCart = id => ({
   }
 });
 
-export const UserCreationConfirmed = () => ({
-  type: types.USER_CONFIRMED,
-});
-
-
 export const userLogin = (
   user,
   password

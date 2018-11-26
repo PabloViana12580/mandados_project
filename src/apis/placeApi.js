@@ -1,4 +1,3 @@
-
 const savePlace = (
 	mandado_inplace,
 	visited_by,

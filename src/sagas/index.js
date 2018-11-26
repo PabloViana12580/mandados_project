@@ -1,10 +1,10 @@
 import { fork, all } from 'redux-saga/effects';
 
-import watchUserCreation from './users';
+import watchClientCreation from './client';
 
 function* mainSaga() {
   yield all([
-    fork(watchUserCreation),
+    fork(watchClientCreation),
   ]);
 }
 

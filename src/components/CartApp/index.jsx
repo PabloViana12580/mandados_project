@@ -7,6 +7,9 @@ import Registro from '../Registro/index';
 import RegistroConductor from '../registroConductor/index'
 import ConductoresList from '../Conductores/ConductoresList/index' 
 import data from '../Conductores/data/mandaderos.json'
+import { connect } from 'react-redux';
+import * as clientActions from '../../actions/client';
+import { formValueSelector } from 'redux-form';
 
 const CartApp = () => (
   <Fragment>
@@ -46,13 +49,42 @@ function Home(){
   );
 }
 
-function Registrar() {
+const Registrar = ({createClient}) => {
   return (
     <div>
-      <Registro/>
+      <Registro onSubmit={createClient}/>
     </div>
   );
 }
+
+const RegisterContainer = connect(
+  state => ({
+    userName: formValueSelector('client')(state, 'userName'),
+    Name: formValueSelector('client')(state, 'Name'),
+    LastName: formValueSelector('client')(state, 'LastName'),
+    Email: formValueSelector('client')(state, 'Email'),
+    Age: formValueSelector('client')(state, 'Age'),
+    passWord: formValueSelector('client')(state, 'passWord'),
+    Genre: formValueSelector('client')(state, 'Genre'),
+    telePhone: formValueSelector('client')(state, 'telePhone'),
+    idDocument: formValueSelector('client')(state, 'idDocument'),
+  }),
+  dispatch =>({
+    createClient(state) {
+      dispatch(clientActions.createClient(
+        state.userName,
+        state.Name,
+        state.LastName,
+        state.Email,
+        state.Age,
+        state.passWord,
+        state.Genre,
+        state.telePhone,
+        state.idDocument,
+      ));
+    },
+  }),
+)(Registrar);
 
 
 function RegistrarConductor() {
@@ -70,8 +102,5 @@ function Conductores() {
     </div>
   );
 }
-
-
-
 
 export default CartApp;

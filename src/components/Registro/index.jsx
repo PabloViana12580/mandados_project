@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import uuid from 'uuid-v4';
 import { Field, reduxForm } from 'redux-form';
 import * as actions from '../../actions'
+import './Registro.css';
 
 const required = value => (value ? undefined : 'Obligatorio');
 
@@ -14,8 +15,14 @@ class Registro extends React.Component{
       handleSubmit
     } = this.props;
     return (
-      <div className = "RegistroInfo">
+
+      <div className = "titulo">
+      <h1>Registrate como comprador </h1>
+  
+      <div className = "registroBox">
+      <div className = "registro">
         <form onSubmit={handleSubmit}>
+          <p>Usuario</p>
           <Field
             name="userName"
             type="text"
@@ -24,7 +31,7 @@ class Registro extends React.Component{
             component="input"
             validate={required}
           />
-
+             <p>Nombre</p>
           <Field
             name="Name"
             type="text"
@@ -33,7 +40,7 @@ class Registro extends React.Component{
             component="input"
             validate={required}
           />  
-
+            <p>Apellido</p>
           <Field
             name="LastName"
             type="text"
@@ -41,7 +48,7 @@ class Registro extends React.Component{
             title="Tu apellido"
             component="input"
           />
-
+             <p>Email</p>
           <Field
             name="Email"
             type="text"
@@ -50,15 +57,15 @@ class Registro extends React.Component{
             component="input"
             validate={required}
           />
-
+             <p>Fecha de Nacimiento</p>
           <Field
             name="Age"
-            type="text"
+            type="date"
             label="Age"
             title="Edad"
             component="input"
           />
-
+           <p>Contraseña</p>
           <Field
             name="passWord"
             type="text"
@@ -67,7 +74,7 @@ class Registro extends React.Component{
             component="input"
             validate={required}
           />
-
+          <p>Genero</p>
           <Field
             name="Genre"
             type="text"
@@ -75,19 +82,19 @@ class Registro extends React.Component{
             title="Genero"
             component="input"
           />
-
+          <p>Numero de Telefono</p>
           <Field
             name="telePhone"
-            type="text"
+            type="number"
             label="Telephone"
             title="Numero de telefono"
             component="input"
             validate={required}
           />
-
+          <p>Numero de identificacion"</p>
           <Field
             name="idDocument"
-            type="text"
+            type="number"
             label="ID"
             title="Numero de identificacion"
             component="input"
@@ -96,7 +103,8 @@ class Registro extends React.Component{
         </form>
         
         <button type="submit">Registrarse</button>
-
+        </div>
+      </div>
       </div>
     );
   }
@@ -111,42 +119,3 @@ export default reduxForm({
   destroyOnUnmount: false,
   forceUnregisterOnUnmount: true,
 })(Registro);
-
-
-/*
-
-        
-        <nav>
-          <Link to='/'>
-            <button onClick={
-              () => {
-                onSubmit(
-                  this.nombre.value,
-                  this.password.value,
-                  this.correo.value,
-                  this.apellido.value,
-                  this.genero.value,
-                  this.dpi.value,
-                  this.telefono.value,
-                  this.usuario.value,
-                  this.edad.value
-                )
-              }
-            }>Registrarse</button>
-          </Link>
-        </nav>
-        
-    );
-  }
-}
-
-export default connect(
-  undefined,
-  dispatch => ({
-    onSubmit(usuario,password,genero,nombre,correo,apellido,dpi,telefono,edad,){
-      console.log(usuario,password,genero,nombre,correo,apellido,dpi,telefono,edad,);
-      dispatch(actions.addUser(uuid(),usuario,password,genero,nombre,correo,apellido,dpi,telefono,edad,));
-    }
-  })
-)(registro);
-*/

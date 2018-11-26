@@ -1,0 +1,34 @@
+
+.registroBox{
+    margin-left: 29rem;
+    margin-top: 3rem;
+    font-size: 1.5rem;
+}
+
+.registro{
+    width: 35rem;
+    background:whitesmoke;
+    border-radius: 2rem;
+    overflow: hidden;
+    font-size: 1rem; 
+
+}
+
+
+
+input[type=text] , input[type=number],input[type=date], input[type=email] {
+    width:90%;
+    padding: 0.9rem 1.7rem;
+    margin: 1rem 0;
+    display: inline-block;
+    border: 0.2rem solid #ccc;
+    box-sizing: border-box;
+
+}
+
+
+
+.titulo{
+    text-align: center;
+    font-size: 1.5rem;
+}

@@ -10,10 +10,9 @@ class login extends React.Component{
     return(
         
         
-        <div className= "titulo">
-         <h1>¡Que Manda!</h1>
+        
         <div className = "boxLogin">
-       
+        <h1>¡Que Manda!</h1>
         <div className = "login">
             <div className = "textLogin">
             <br/>
@@ -51,7 +50,6 @@ class login extends React.Component{
 
              </div>   
             
-        </div>
         </div>
         </div>
     )

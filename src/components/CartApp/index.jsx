@@ -7,9 +7,9 @@ import Registro from '../Registro/index';
 import RegistroConductor from '../registroConductor/index'
 import ConductoresList from '../Conductores/ConductoresList/index' 
 import data from '../Conductores/data/mandaderos.json'
+import { formValueSelector } from 'redux-form';
 import { connect } from 'react-redux';
 import * as clientActions from '../../actions/client';
-import { formValueSelector } from 'redux-form';
 
 const CartApp = () => (
   <Fragment>
@@ -49,7 +49,9 @@ function Home(){
   );
 }
 
-const Registrar = ({createClient}) => {
+const Registrar =({
+  createClient,
+}) => {
   return (
     <div>
       <Registro onSubmit={createClient}/>
@@ -57,7 +59,7 @@ const Registrar = ({createClient}) => {
   );
 }
 
-const RegisterContainer = connect(
+const registerContainer = connect(
   state => ({
     userName: formValueSelector('client')(state, 'userName'),
     Name: formValueSelector('client')(state, 'Name'),
@@ -86,7 +88,6 @@ const RegisterContainer = connect(
   }),
 )(Registrar);
 
-
 function RegistrarConductor() {
   return (
     <div>
@@ -102,5 +103,7 @@ function Conductores() {
     </div>
   );
 }
+
+
 
 export default CartApp;

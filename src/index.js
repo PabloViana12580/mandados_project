@@ -8,10 +8,9 @@ import configureStore from './configureStore';
 import './index.css';
 import Conductores from './components/Conductores';
 import Login from './components/Login';
-
 import CartApp from './components/CartApp'
-import Registrar from './components/Registro/registroContainer';
-import RegistrarConductor from './components/registroConductor';
+import Registrar from './components/Registro';
+import RegistrarConductor from './components/RegistroConductor';
 
 
 const store = configureStore();

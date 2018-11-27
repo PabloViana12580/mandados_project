@@ -4,21 +4,17 @@
 }
 
 
-    .btnRegistrar {
-        
-        border: none;
-        padding: 1.5rem;
-        background-color: #7F5D33;
-        border-radius: 1rem;
-        display: flex;
-        margin: 0 auto;
-        margin-left: 54rem;
-        font-size: 1.5rem;
-    }
+.btnRegistrar {       
+    border: none;
+    padding: 1.5rem;
+    background-color: #7F5D33;
+    border-radius: 1rem;
+    display: flex;
+    margin: 0 auto;
+    margin-left: 54rem;
+    font-size: 1.5rem;
+}
     
-    
-    button:hover {
-      
-        background-color: lightskyblue;
-    
-    }
+button:hover {
+    background-color: lightskyblue;
+}

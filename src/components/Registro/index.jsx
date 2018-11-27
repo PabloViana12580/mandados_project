@@ -4,19 +4,20 @@ import PropTypes from 'prop-types';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import uuid from 'uuid-v4';
 import { Field, reduxForm } from 'redux-form';
-import * as actions from '../../actions';
+import {connect} from 'react-redux';
+import { formValueSelector } from 'redux-form';
+import * as clientActions from '../../actions/client';
 import CustomImput from '../CustomComponents/Input';
-import './Registro.css'
 
 
-class Registro extends React.Component{
+class DummyRegister extends React.Component{
   render() {
     const {
-      handleSubmit
+      onSubmit
     } = this.props;
     return (
       <div className = "RegistroInfo">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={onSubmit}>
           <Field
             name="userName"
             type="text"
@@ -43,7 +44,7 @@ class Registro extends React.Component{
 
           <Field
             name="Email"
-            type="email"
+            type="text"
             label="Email"
             title="Correo electronico"
             component={CustomImput}
@@ -51,7 +52,7 @@ class Registro extends React.Component{
 
           <Field
             name="Age"
-            type="date"
+            type="text"
             label="Age"
             title="Edad"
             component={CustomImput}
@@ -75,7 +76,7 @@ class Registro extends React.Component{
 
           <Field
             name="telePhone"
-            type="number"
+            type="text"
             label="Telephone"
             title="Numero de telefono"
             component={CustomImput}
@@ -83,29 +84,82 @@ class Registro extends React.Component{
 
           <Field
             name="idDocument"
-            type="number"
+            type="text"
             label="ID"
             title="Numero de identificacion"
             component={CustomImput}
           />
         </form>
         
-        <button className="btnRegistrar" type="submit">Registrarse</button>
+        <button onClick={
+          () => {
+            onSubmit(
+              this.userName,
+            )
+          }
+        } className = "btnRegistrar" type="submit">Registrarse</button>
 
       </div>
     );
   }
 }
 
-Registro.propTypes = {
+DummyRegister.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
 };
+
+const RegisterContainer = connect(
+  undefined,
+  dispatch =>({
+    onSubmit(userName) {
+      dispatch(clientActions.createClient(
+        userName,
+      ));
+    },
+  }),
+)(DummyRegister);
 
 export default reduxForm({
   form: 'client',
   destroyOnUnmount: false,
   forceUnregisterOnUnmount: true,
-})(Registro);
+})(RegisterContainer);
 
 
- 
+/*
+
+        
+        <nav>
+          <Link to='/'>
+            <button onClick={
+              () => {
+                onSubmit(
+                  this.nombre.value,
+                  this.password.value,
+                  this.correo.value,
+                  this.apellido.value,
+                  this.genero.value,
+                  this.dpi.value,
+                  this.telefono.value,
+                  this.usuario.value,
+                  this.edad.value
+                )
+              }
+            }>Registrarse</button>
+          </Link>
+        </nav>
+        
+    );
+  }
+}
+
+export default connect(
+  undefined,
+  dispatch => ({
+    onSubmit(usuario,password,genero,nombre,correo,apellido,dpi,telefono,edad,){
+      console.log(usuario,password,genero,nombre,correo,apellido,dpi,telefono,edad,);
+      dispatch(actions.addUser(uuid(),usuario,password,genero,nombre,correo,apellido,dpi,telefono,edad,));
+    }
+  })
+)(registro);
+*/

@@ -7,66 +7,15 @@ import { formValueSelector } from 'redux-form';
 import { connect } from 'react-redux';
 import * as clientActions from '../../actions/client';
 
-const CartApp = () => (
-  <Fragment>
 
-  </Fragment>
-);
-
-function Compras() {
+const CartApp = () =>{
   return (
     <div>
-         <Inventory />
-         <CartTotal/>
+        <Inventory/>
+        <CartTotal/>
     </div>
   );
 }
-
-
-function Login() {
-  return (
-    <div>
-    </div>
-  );
-}
-
-
-function Home(){
-  return(
-    <div className = "page-container">
-    {/*<ConductoresList  mandaderos= {data.mandaderos} />*/}
-    </div>
-  );
-}
-
-const Registrar =({
-  createClient,
-}) => {
-  return (
-    <div>
-      {/*<Registro onSubmit={createClient}/>*/}
-    </div>
-  );
-}
-
-
-
-/*function RegistrarConductor() {
-  return (
-    <div>
-      <RegistroConductor/>
-    </div>
-  );
-}
-
-function Conductores() {
-  return (
-    <div>
-      <Registro/>
-    </div>
-  );
-}
-*/
 
 
 export default CartApp;

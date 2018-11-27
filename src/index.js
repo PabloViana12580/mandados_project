@@ -9,7 +9,7 @@ import './index.css';
 import Conductores from './components/Conductores';
 import Login from './components/Login';
 
-
+import CartApp from './components/CartApp'
 import Registrar from './components/Registro/registroContainer';
 import RegistrarConductor from './components/registroConductor';
 
@@ -24,6 +24,8 @@ ReactDOM.render(
 	        <Route exact path="/" component={Login}/>
 	        <Route exact path="/registro" component= {Registrar}/>
 	        <Route exact path="/registroC" component = {RegistrarConductor}/>
+					<Route exact path="/pedido" component = {CartApp}/>
+				
    		</div>
     </Router>
 

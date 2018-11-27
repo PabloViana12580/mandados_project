@@ -1,12 +1,20 @@
-export const clientHandler = (state, action) => {
+const defaultState = {
+	clientCreated: false,
+};
+
+export const clientHandler = (state = defaultState, action) => {
 	switch(action){
 		case 'CLIENT_CREATED': {
+			console.log("hola");
 			return {
-				state
+				...state,
+				clientCreated: true,
 			};
+		}
 		default: {
 			return state;
-		}
-		}
+		};
 	}
 }
+
+export default clientHandler;

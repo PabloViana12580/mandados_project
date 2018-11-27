@@ -2,11 +2,13 @@ import { combineReducers } from 'redux';
 
 import inventory, * as fromInventory from './inventory';
 import cart, * as fromCart from './cart';
+import clientReducer from './client';
 import { reducer as formReducer } from 'redux-form';
 
 const reducer = combineReducers({
   inventory,
   cart,
+  clientReducer,
   form: formReducer,
 });
 

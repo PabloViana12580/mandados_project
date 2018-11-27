@@ -9,7 +9,7 @@ import './index.css';
 import Conductores from './components/Conductores';
 import Login from './components/Login';
 import Registrar from './components/Registro';
-import RegistrarConductor from './components/RegistroConductor';
+import RegistrarConductor from './components/registroConductor';
 
 const store = configureStore();
 

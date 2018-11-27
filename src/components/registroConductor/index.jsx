@@ -1,92 +1,126 @@
-import React, {Fragment} from 'react';
-import {connect} from 'react-redux';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
+//import {connect} from 'react-redux';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import uuid from 'uuid-v4';
-import * as actions from '../../actions'
+import { Field, reduxForm } from 'redux-form';
+import * as actions from '../../actions';
+import CustomImput from '../CustomComponents/Input';
+import './Registro.css'
 
-class registroConductor extends React.Component{
+class RegistroConductor extends React.Component{
   render() {
-    const {onSubmit} = this.props;
+    const {
+      handleSubmit
+    } = this.props;
     return (
-      <div>
-        <p> Nombre de usuario: </p>
-        <input type="text"
-        ref = {node => {this.usuario = node;}}/>
-        <br/>
+      <div className = "RegistroInfo">
+        <form onSubmit={handleSubmit}>
+          <Field
+            name="userName"
+            type="text"
+            label="Username"
+            title="Por favor ingresa tu nombre de usuario"
+            component={CustomImput}
+          />
 
-        <p> Nombre: </p>
-        <input type="text"
-        ref = {node => {this.nombre = node;}}/>
+          <Field
+            name="Name"
+            type="text"
+            label="Name"
+            title="Tu nombre"
+            component={CustomImput}
+          />  
+
+          <Field
+            name="LastName"
+            type="text"
+            label="Lastname"
+            title="Tu apellido"
+            component={CustomImput}
+          />
+
+          <Field
+            name="Email"
+            type="email"
+            label="Email"
+            title="Correo electronico"
+            component={CustomImput}
+          />
+
+          <Field
+            name="Age"
+            type="date"
+            label="Age"
+            title="Edad"
+            component={CustomImput}
+          />
+
+          <Field
+            name="passWord"
+            type="text"
+            label="Password"
+            title="Constraseña"
+            component={CustomImput}
+          />
+
+          <Field
+            name="Genre"
+            type="text"
+            label="Genre"
+            title="Genero"
+            component={CustomImput}
+          />
+
+          <Field
+            name="telePhone"
+            type="number"
+            label="Telephone"
+            title="Numero de telefono"
+            component={CustomImput}
+          />
+
+          <Field
+            name="idDocument"
+            type="numer"
+            label="ID"
+            title="Numero de identificacion"
+            component={CustomImput}
+          />
+
+          <Field
+            name="used_to"
+            type="text"
+            label="Acostumbrado"
+            title="Comodo con"
+            component={CustomImput}
+          />
+
+          
+          <Field
+            name="desciption"
+            type="text"
+            label="Descripcion"
+            title="Descripcion"
+            component={CustomImput}
+          />
+        </form>
         
-        <p> Apellido: </p>
-        <input type="text"
-        ref = {node => {this.apellido = node;}}/>
-        <br/>
-        
-        <p>Correo</p>
-        <input type="text"
-        ref = {node => {this.correo = node;}}/> <br/>
-        <br/>
+        <button className = "btnRegistrar"type="submit">Registrarse</button>
 
-        <p> Genero: </p>
-        <input type="text"
-        ref = {node => {this.genero = node;}}/>
-        <br/>
-
-         <p> Telefono: </p>
-        <input type="text"
-        ref = {node => {this.telefono = node;}}/>
-        <br/>
-
-
-        <p> DPI: </p>
-        <input type="text"
-        ref = {node => {this.dpi = node;}}/>
-        <br/>
-
-        
-        <p> Edad: </p>
-        <input type="text"
-        ref = {node => {this.edad = node;}}/>
-        <br/>
-
-
-        <p>Contraseña</p>
-        <input type="text" ref = {node => {this.password = node;}}/> 
-        <br/>
-        <br/>
-        
-        <nav>
-          <Link to='/'>
-            <button onClick={
-              () => {
-                onSubmit(
-                  this.nombre.value,
-                  this.password.value,
-                  this.correo.value,
-                  this.apellido.value,
-                  this.genero.value,
-                  this.dpi.value,
-                  this.telefono.value,
-                  this.usuario.value,
-                  this.edad.value
-                )
-              }
-            }>Registrarse</button>
-          </Link>
-        </nav>
-        
       </div>
     );
   }
 }
 
-export default connect(
-  undefined,
-  dispatch => ({
-    onSubmit(usuario,password,genero,nombre,correo,apwllido,dpi,telefono,edad,){
-      console.log(usuario,password,genero,nombre,correo,apwllido,dpi,telefono,edad,);
-      dispatch(actions.addUser(uuid(),usuario,password,genero,nombre,correo,apwllido,dpi,telefono,edad,));
-    }
-  })
-)(registroConductor);
+RegistroConductor.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+};
+
+
+
+export default reduxForm({
+  form: 'mandadero',
+  destroyOnUnmount: false,
+  forceUnregisterOnUnmount: true,
+})(RegistroConductor);

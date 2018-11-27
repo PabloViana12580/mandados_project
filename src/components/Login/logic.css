@@ -43,10 +43,11 @@ body{
     
 }
 
-input[type=text], input[type=password] {
-    width:90%;
-    padding: 0.9rem 1.7rem;
-    margin: 1rem 0;
+input[type=password], input[type=text] , input[type=number], input[type=date], input[type=email] {
+
+    width:80%;
+    padding: 0.9rem 2rem;
+    margin: 1.5rem 0;
     display: inline-block;
     border: 0.2rem solid #ccc;
     box-sizing: border-box;

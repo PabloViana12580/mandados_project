@@ -6,6 +6,7 @@ import uuid from 'uuid-v4';
 import { Field, reduxForm } from 'redux-form';
 import * as actions from '../../actions';
 import CustomImput from '../CustomComponents/Input';
+import './Registro.css'
 
 
 class Registro extends React.Component{
@@ -42,7 +43,7 @@ class Registro extends React.Component{
 
           <Field
             name="Email"
-            type="text"
+            type="email"
             label="Email"
             title="Correo electronico"
             component={CustomImput}
@@ -50,7 +51,7 @@ class Registro extends React.Component{
 
           <Field
             name="Age"
-            type="text"
+            type="date"
             label="Age"
             title="Edad"
             component={CustomImput}
@@ -74,7 +75,7 @@ class Registro extends React.Component{
 
           <Field
             name="telePhone"
-            type="text"
+            type="number"
             label="Telephone"
             title="Numero de telefono"
             component={CustomImput}
@@ -82,14 +83,14 @@ class Registro extends React.Component{
 
           <Field
             name="idDocument"
-            type="text"
+            type="number"
             label="ID"
             title="Numero de identificacion"
             component={CustomImput}
           />
         </form>
         
-        <button type="submit">Registrarse</button>
+        <button className="btnRegistrar" type="submit">Registrarse</button>
 
       </div>
     );
@@ -109,40 +110,4 @@ export default reduxForm({
 })(Registro);
 
 
-/*
-
-        
-        <nav>
-          <Link to='/'>
-            <button onClick={
-              () => {
-                onSubmit(
-                  this.nombre.value,
-                  this.password.value,
-                  this.correo.value,
-                  this.apellido.value,
-                  this.genero.value,
-                  this.dpi.value,
-                  this.telefono.value,
-                  this.usuario.value,
-                  this.edad.value
-                )
-              }
-            }>Registrarse</button>
-          </Link>
-        </nav>
-        
-    );
-  }
-}
-
-export default connect(
-  undefined,
-  dispatch => ({
-    onSubmit(usuario,password,genero,nombre,correo,apellido,dpi,telefono,edad,){
-      console.log(usuario,password,genero,nombre,correo,apellido,dpi,telefono,edad,);
-      dispatch(actions.addUser(uuid(),usuario,password,genero,nombre,correo,apellido,dpi,telefono,edad,));
-    }
-  })
-)(registro);
-*/
+ 

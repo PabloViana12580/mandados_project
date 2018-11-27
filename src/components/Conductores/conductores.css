@@ -2,9 +2,7 @@
     display:flex;
     flex: 2;
     flex-wrap: wrap;
-    flex-direction: row;
- 
-    
+    flex-direction: row;  
 }
 .page-container{
     width: 1200px;

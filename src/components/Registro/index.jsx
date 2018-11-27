@@ -4,10 +4,9 @@ import PropTypes from 'prop-types';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import uuid from 'uuid-v4';
 import { Field, reduxForm } from 'redux-form';
-import * as actions from '../../actions'
-import './Registro.css';
+import * as actions from '../../actions';
+import CustomImput from '../CustomComponents/Input';
 
-const required = value => (value ? undefined : 'Obligatorio');
 
 class Registro extends React.Component{
   render() {
@@ -15,96 +14,83 @@ class Registro extends React.Component{
       handleSubmit
     } = this.props;
     return (
-
-      <div className = "titulo">
-      <h1>Registrate como comprador </h1>
-  
-      <div className = "registroBox">
-      <div className = "registro">
+      <div className = "RegistroInfo">
         <form onSubmit={handleSubmit}>
-          <p>Usuario</p>
           <Field
             name="userName"
             type="text"
             label="Username"
             title="Por favor ingresa tu nombre de usuario"
-            component="input"
-            validate={required}
+            component={CustomImput}
           />
-             <p>Nombre</p>
+
           <Field
             name="Name"
             type="text"
             label="Name"
             title="Tu nombre"
-            component="input"
-            validate={required}
+            component={CustomImput}
           />  
-            <p>Apellido</p>
+
           <Field
             name="LastName"
             type="text"
             label="Lastname"
             title="Tu apellido"
-            component="input"
+            component={CustomImput}
           />
-             <p>Email</p>
+
           <Field
             name="Email"
             type="text"
             label="Email"
             title="Correo electronico"
-            component="input"
-            validate={required}
+            component={CustomImput}
           />
-             <p>Fecha de Nacimiento</p>
+
           <Field
             name="Age"
-            type="date"
+            type="text"
             label="Age"
             title="Edad"
-            component="input"
+            component={CustomImput}
           />
-           <p>Contraseña</p>
+
           <Field
             name="passWord"
             type="text"
             label="Password"
             title="Constraseña"
-            component="input"
-            validate={required}
+            component={CustomImput}
           />
-          <p>Genero</p>
+
           <Field
             name="Genre"
             type="text"
             label="Genre"
             title="Genero"
-            component="input"
+            component={CustomImput}
           />
-          <p>Numero de Telefono</p>
+
           <Field
             name="telePhone"
-            type="number"
+            type="text"
             label="Telephone"
             title="Numero de telefono"
-            component="input"
-            validate={required}
+            component={CustomImput}
           />
-          <p>Numero de identificacion"</p>
+
           <Field
             name="idDocument"
-            type="number"
+            type="text"
             label="ID"
             title="Numero de identificacion"
-            component="input"
-            validate={required}
+            component={CustomImput}
           />
         </form>
         
         <button type="submit">Registrarse</button>
-        </div>
-      </div>
+
       </div>
     );
   }
@@ -114,8 +100,49 @@ Registro.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
 };
 
+
+
 export default reduxForm({
   form: 'client',
   destroyOnUnmount: false,
   forceUnregisterOnUnmount: true,
 })(Registro);
+
+
+/*
+
+        
+        <nav>
+          <Link to='/'>
+            <button onClick={
+              () => {
+                onSubmit(
+                  this.nombre.value,
+                  this.password.value,
+                  this.correo.value,
+                  this.apellido.value,
+                  this.genero.value,
+                  this.dpi.value,
+                  this.telefono.value,
+                  this.usuario.value,
+                  this.edad.value
+                )
+              }
+            }>Registrarse</button>
+          </Link>
+        </nav>
+        
+    );
+  }
+}
+
+export default connect(
+  undefined,
+  dispatch => ({
+    onSubmit(usuario,password,genero,nombre,correo,apellido,dpi,telefono,edad,){
+      console.log(usuario,password,genero,nombre,correo,apellido,dpi,telefono,edad,);
+      dispatch(actions.addUser(uuid(),usuario,password,genero,nombre,correo,apellido,dpi,telefono,edad,));
+    }
+  })
+)(registro);
+*/

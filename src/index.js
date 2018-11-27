@@ -2,18 +2,27 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import registerServiceWorker from './registerServiceWorker';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import App from './App';
 import configureStore from './configureStore';
 import './index.css';
+import Conductores from './components/Conductores';
+import Login from './components/Login';
+import Registrar from './components/Registro';
+import RegistrarConductor from './components/RegistroConductor';
 
 const store = configureStore();
 
 ReactDOM.render(
   <Provider store = {store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>  
+    <Router>
+    		<div>
+	        <Route exact path="/conductores" component={Conductores} />
+	        <Route exact path="/" component={Login}/>
+	        <Route exact path="/registro" component= {Registrar}/>
+	        <Route exact path="/registroC" component = {RegistrarConductor}/>
+    		</div>
+    </Router>  
   </Provider>,
   document.getElementById('root')
 );

@@ -8,49 +8,49 @@ class login extends React.Component{
     render(){
     const {onSubmit} = this.props;
     return(
-        
-        
-        
-        <div className = "boxLogin">
-        <h1>¡Que Manda!</h1>
-        <div className = "login">
-            <div className = "textLogin">
-            <br/>
-            <p> Username </p>
-            <input type="text" ref = {node => {this.title = node; }} />
-            <br/>
-
-            <p> Password</p>
-            <input type="password" ref = {node => {this.content = node;} } />
-            <br/>
-            <br/>
-
-            <nav>
-            <Link to='/home'>
-                <button onClick={
-                () => {
-                    onSubmit(
-                        this.title.value,
-                        this.content.value
-                        );
-                        this.title.value = "";
-                        this.content.value = "";
-                        }
-                    }> INGRESAR</button>
-            </Link>
-            </nav>
-            
-            <div className = "registros">
-                <nav><Link to='/registroC'>Registro de Conductores</Link></nav>
-                <br/>
-                <nav><Link to='/registro'>Registro</Link></nav>
-                <br/>
-                
+        <div className = "Wrapper">
+            <div className = "queManda">
             </div>
+            <div className = "boxLogin">
+                <div className = "login">
+                    <div className = "textLogin">
+                    <br/>
+                    <p> Username </p>
+                    <input type="text" ref = {node => {this.title = node; }} />
+                    <br/>
 
-             </div>   
-            
-        </div>
+                    <p> Password</p>
+                    <input type="password" ref = {node => {this.content = node;} } />
+                    <br/>
+                    <br/>
+                    
+                    <nav>
+                    <Link to='/home'>
+                        <button className="btnIngresar" onClick={
+                        () => {
+                            onSubmit(
+                                this.title.value,
+                                this.content.value
+                                );
+                                this.title.value = "";
+                                this.content.value = "";
+                                }
+                            }>Ingresar</button>
+                    </Link>
+                    </nav>
+                    
+                    <div className = "registros">
+                        <nav><Link to='/registroC'>Registro de Conductores</Link></nav>
+                        <br/>
+                        <nav><Link to='/registro'>Registro</Link></nav>
+                        <br/>
+                        
+                    </div>
+
+                     </div>   
+                    
+                </div>
+            </div>
         </div>
     )
 

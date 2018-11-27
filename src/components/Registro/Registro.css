@@ -1,3 +1,8 @@
+.RegistroInfo {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
 
 .registroBox{
     margin-left: 29rem;
@@ -14,9 +19,7 @@
 
 }
 
-
-
-input[type=text] , input[type=number],input[type=date], input[type=email] {
+input[type=text] , input[type=number], input[type=date], input[type=email] {
     width:90%;
     padding: 0.9rem 1.7rem;
     margin: 1rem 0;
@@ -24,8 +27,6 @@ input[type=text] , input[type=number],input[type=date], input[type=email] {
     border: 0.2rem solid #ccc;
     box-sizing: border-box;
 }
-
-
 
 .titulo{
     text-align: center;

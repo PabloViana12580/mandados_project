@@ -100,8 +100,6 @@ Registro.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
 };
 
-
-
 export default reduxForm({
   form: 'client',
   destroyOnUnmount: false,

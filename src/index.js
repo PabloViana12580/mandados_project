@@ -8,7 +8,7 @@ import configureStore from './configureStore';
 import './index.css';
 import Conductores from './components/Conductores';
 import Login from './components/Login';
-import Registrar from './components/Registro';
+import Registrar from './components/Registro/registroContainer';
 import RegistrarConductor from './components/RegistroConductor';
 
 const store = configureStore();
@@ -16,13 +16,14 @@ const store = configureStore();
 ReactDOM.render(
   <Provider store = {store}>
     <Router>
-    		<div>
+    	<div>
 	        <Route exact path="/conductores" component={Conductores} />
 	        <Route exact path="/" component={Login}/>
 	        <Route exact path="/registro" component= {Registrar}/>
 	        <Route exact path="/registroC" component = {RegistrarConductor}/>
-    		</div>
-    </Router>  
+   		</div>
+    </Router>
+
   </Provider>,
   document.getElementById('root')
 );

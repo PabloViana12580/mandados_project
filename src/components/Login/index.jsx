@@ -1,7 +1,8 @@
 import React, {Fragment} from 'react';
 import {connect} from 'react-redux';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
-import * as actions from '../../actions'
+import * as actions from '../../actions';
+import Modal from '../CustomComponents/Modal';
 import './logic.css'
 
 class login extends React.Component{
@@ -9,6 +10,7 @@ class login extends React.Component{
     const {onSubmit} = this.props;
     return(
         <div className = "Wrapper">
+            <Modal />
             <div className = "queManda">
             </div>
             <div className = "boxLogin">

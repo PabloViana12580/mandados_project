@@ -1,10 +1,8 @@
 export const modalHandler = (state = true, action) => {
+  
   switch (action.type) {
-  case 'OPENED_MODAL': {
-    return true;
-  }
-  case 'CLOSED_MODAL': {
-    return false;
+  case 'MODAL_TOGGLE': {
+    return !state;
   }
   default: {
     return state;

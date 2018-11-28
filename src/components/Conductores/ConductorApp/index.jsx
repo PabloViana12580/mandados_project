@@ -1,11 +1,10 @@
 import React, { Fragment } from 'react';
-import ConductorList from '../ConductorList';
-import data from '../data/mandadero.json'
+import ConductorList from '../ConductoresList';
+import data from '../data/mandaderos.json';
 
-const ConductoApp= () =>{
+const ConductorApp= () =>{
   return (
     <div>
-       
         <ConductorList props = "data"/>
     </div>
   );
@@ -13,4 +12,4 @@ const ConductoApp= () =>{
 
 
 
-export default ConductoApp;
+export default ConductorApp;

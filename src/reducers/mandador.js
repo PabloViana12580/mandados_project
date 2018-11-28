@@ -6,7 +6,7 @@ const selectMandador = (state = [], action) => {
 			return {
 				state
 			};
-		default: 	return state;
+		default: return state;
 		  }
   	}
   };

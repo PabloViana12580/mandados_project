@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import App from './App';
 import configureStore from './configureStore';
 import './index.css';
-import Conductores from './components/Conductores';
+import Conductores from './components/Conductores/ConductorApp';
 import Login from './components/Login';
 import CartApp from './components/CartApp'
 import Registrar from './components/Registro';

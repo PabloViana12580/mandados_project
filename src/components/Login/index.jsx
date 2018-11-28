@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as actions from '../../actions';
 import Modal from '../CustomComponents/Modal';
+import Toolbar from '@material-ui/core/Toolbar';
+import Button from '@material-ui/core/Button';
+import AppBar from '@material-ui/core/AppBar';
 import './logic.css'
 
 class login extends React.Component{
@@ -10,6 +13,18 @@ class login extends React.Component{
     const {onSubmit} = this.props;
     return(
         <div className = "Wrapper">
+            <div>
+              <AppBar className="topBar" position="static">
+                  <Toolbar>
+                    <Button type="button" color="inherit">
+                      Mas información
+                    </Button>
+                    <Button type="button" color="inherit">
+                      Contacto
+                    </Button>
+                  </Toolbar>
+                </AppBar>
+            </div>
             <Modal />
             <div className = "queManda">
             </div>

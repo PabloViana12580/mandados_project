@@ -2,8 +2,8 @@ import React from 'react';
 import ConductorListItem from '../ConductorListItem/index';
 import './index.css';
 
-export default function ConductorList(props){
-    return <div>
+const ConductorList = (props) => (
+    <div>
      <h1>Que Manda</h1>
     <div className= "ConductorList">
        {
@@ -16,4 +16,6 @@ export default function ConductorList(props){
 
     </div>
     </div>
-}
+)
+
+export default ConductorList;

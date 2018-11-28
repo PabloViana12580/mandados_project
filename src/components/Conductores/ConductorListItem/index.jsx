@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import {connect} from 'react-redux';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
-import * as actions from '../../../actions/index';
+import * as actions from '../../../actions';
 
 
 const ConductorListItem = props =>(

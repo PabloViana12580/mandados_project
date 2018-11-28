@@ -8,3 +8,20 @@
     font-size: 5rem;
     padding: 1rem;
 }
+
+.imagen {
+    width: 33rem;
+    height: 7rem;
+    background-image: url("../../Images/que_m.png");
+    border-radius: 1rem;
+    margin-left: 32rem;
+    margin-top: 2rem;
+    
+}
+
+
+.hola{
+    margin-left: 15rem;
+    font-size: 1.3rem;
+    margin-top: 7rem;
+}

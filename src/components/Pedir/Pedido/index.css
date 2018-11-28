@@ -1,0 +1,13 @@
+.enviarBTN{
+           
+    border: none;
+    padding: 1rem;
+    background-color: #7F5D33;
+    border-radius: 1rem;
+    display: flex;
+    margin: 0 auto;
+    margin-left: 66rem;
+    font-size: 1.5rem;
+    position: static;
+
+}

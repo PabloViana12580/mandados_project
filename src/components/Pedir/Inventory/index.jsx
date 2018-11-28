@@ -6,8 +6,9 @@ import InventoryForm from '../InventoryForm';
 
 const Inventory = () => (
   <div className="inventory">
+   <InventoryForm />
     <InventoryList />
-    <InventoryForm />
+   
   </div>
 );
 

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import App from './App';
+
 import configureStore from './configureStore';
 import './index.css';
 import Conductores from './components/Conductores';
@@ -25,6 +25,7 @@ ReactDOM.render(
 	        <Route exact path="/registro" component= {Registrar}/>
 	        <Route exact path="/registroC" component = {RegistrarConductor}/>
 					<Route exact path="/pedido" component = {CartApp}/>
+				
 				
    		</div>
     </Router>

@@ -3,8 +3,14 @@
     flex: 2;
     flex-wrap: wrap;
     flex-direction: row;
+<<<<<<< HEAD:src/components/Conductores/ConductoresList/index.css
     margin-left: 7rem;
     margin-top: 4rem;
+=======
+    width: 10rem;
+    height: 10rem;
+
+>>>>>>> a3d6a94a971a2a7b84a1263c9b6b4d552479e493:src/components/Conductores/index.css
     
 }
 

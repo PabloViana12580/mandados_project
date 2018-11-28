@@ -21,7 +21,7 @@ export const addToCart = id => ({
     id,
   }
 });
-
+  
 export const userLogin = (
   user,
   password

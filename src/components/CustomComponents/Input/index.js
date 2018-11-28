@@ -7,7 +7,6 @@ const CustomInput = ({
   input,
   meta,
   label,
-  title,
 }) => (
     <TextField
       className="customInput"
@@ -24,7 +23,6 @@ CustomInput.propTypes = {
   input: PropTypes.object.isRequired,
   meta: PropTypes.object.isRequired,
   label: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
 };
 
 export default (CustomInput);

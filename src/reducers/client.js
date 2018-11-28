@@ -4,15 +4,14 @@ const defaultState = {
 
 export const clientHandler = (state = defaultState, action) => {
 	switch(action){
-		case 'CLIENT_CREATED': {
-			console.log("hola");
+		case 'CLIENT_TOGGLE': {
 			return {
 				...state,
-				clientCreated: true,
+				clientCreated: !state,
 			};
 		}
 		default: {
-			return state;
+			return false;
 		};
 	}
 }

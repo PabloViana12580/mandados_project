@@ -5,6 +5,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import { connect } from 'react-redux';
 import * as actions from '../../../actions/modal';
+import modalHandler from '../../../reducers/modal';
 
 
 function getModalStyle() {
@@ -30,7 +31,7 @@ const styles = theme => ({
 
 const SimpleModal = ({
   classes,
-  handleClose,
+  handleBehaviour,
   modalStatus,
 }) => (
   <div>
@@ -38,7 +39,8 @@ const SimpleModal = ({
       open={modalStatus}
     >
       <div style={getModalStyle()} className={classes.paper}>
-        <button onClick={handleClose} color="primary" >
+        <h1> hola </h1>
+        <button onClick={handleBehaviour} color="primary" >
           
         </button>
         <SimpleModalWrapped />
@@ -49,22 +51,22 @@ const SimpleModal = ({
 
 SimpleModal.propTypes = {
   classes: PropTypes.object.isRequired,
-  handleClose: PropTypes.func.isRequired,
-  modalStatus: PropTypes.bool.isRequired,
+  handleBehaviour: PropTypes.func,
+  modalStatus: PropTypes.bool,
 };
 
 const SimpleModalWrapped = withStyles(styles)(SimpleModal);
 
 const ModalContainer = connect(
-  state => ({
-    modalStatus: state.modal,
+  (state) => (
+  {
+    modalStatus: state.modalReducer,
   }),
   dispatch => ({
-    handleClose() {
-      dispatch(actions.handleClose());
+    handleBehaviour() {
+      dispatch(actions.handleBehaviour());
     },
   }),
-  undefined,
 )(SimpleModalWrapped);
 
 // We need an intermediary variable for handling the recursive nesting.

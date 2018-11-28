@@ -1,9 +1,6 @@
 import * as types from '../types/modal';
 
-export const handleOpen = () => ({
-  type: types.OPENED_MODAL,
+export const handleBehaviour = () => ({
+  type: types.MODAL_TOGGLE,
 });
 
-export const handleClose = () => ({
-  type: types.CLOSED_MODAL,
-});

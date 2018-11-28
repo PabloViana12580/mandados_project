@@ -1,8 +1,6 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 //import {connect} from 'react-redux';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import uuid from 'uuid-v4';
 import { Field, reduxForm } from 'redux-form';
 import {connect} from 'react-redux';
 import { formValueSelector } from 'redux-form';
@@ -13,7 +11,16 @@ import CustomImput from '../CustomComponents/Input';
 class DummyRegister extends React.Component{
   render() {
     const {
-      onSubmit
+      onSubmit,
+      userName,
+      Name,
+      LastName,
+      Email,
+      Age,
+      passWord,
+      Genre,
+      telePhone,
+      idDocument,
     } = this.props;
     return (
       <div className = "RegistroInfo">
@@ -21,72 +28,63 @@ class DummyRegister extends React.Component{
           <Field
             name="userName"
             type="text"
-            label="Username"
-            title="Por favor ingresa tu nombre de usuario"
+            label="Nombre de usuario"
             component={CustomImput}
           />
 
           <Field
             name="Name"
             type="text"
-            label="Name"
-            title="Tu nombre"
+            label="Tu nombre"
             component={CustomImput}
           />  
 
           <Field
             name="LastName"
             type="text"
-            label="Lastname"
-            title="Tu apellido"
+            label="Tu apellido"
             component={CustomImput}
           />
 
           <Field
             name="Email"
             type="text"
-            label="Email"
-            title="Correo electronico"
+            label="Correo electronico"
             component={CustomImput}
           />
 
           <Field
             name="Age"
             type="text"
-            label="Age"
-            title="Edad"
+            label="Edad"
             component={CustomImput}
           />
 
           <Field
             name="passWord"
             type="text"
-            label="Password"
-            title="Constraseña"
+            label="Constraseña"
             component={CustomImput}
           />
 
           <Field
             name="Genre"
             type="text"
-            label="Genre"
-            title="Genero"
+            label="Genero"
             component={CustomImput}
           />
 
           <Field
             name="telePhone"
             type="text"
-            label="Telephone"
-            title="Numero de telefono"
+            label="Numero de telefono"
             component={CustomImput}
           />
 
           <Field
             name="idDocument"
             type="text"
-            label="ID"
-            title="Numero de identificacion"
+            label="Numero de identificacion"
             component={CustomImput}
           />
         </form>
@@ -94,7 +92,15 @@ class DummyRegister extends React.Component{
         <button onClick={
           () => {
             onSubmit(
-              this.userName,
+              userName,
+              Name,
+              LastName,
+              Email,
+              Age,
+              passWord,
+              Genre,
+              telePhone,
+              idDocument,
             )
           }
         } className = "btnRegistrar" type="submit">Registrarse</button>
@@ -107,29 +113,61 @@ class DummyRegister extends React.Component{
 DummyRegister.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
 };
-
-const RegisterContainer = connect(
-  undefined,
-  dispatch =>({
-    onSubmit(userName) {
-      dispatch(clientActions.createClient(
-        userName,
-      ));
-    },
-  }),
-)(DummyRegister);
-
-export default reduxForm({
+let RegisterForm = reduxForm({
   form: 'client',
   destroyOnUnmount: false,
   forceUnregisterOnUnmount: true,
-})(RegisterContainer);
+})(DummyRegister);
+
+const selector = formValueSelector('client') // <-- same as form name
+
+const RegisterContainer = connect(
+  state =>{
+    const userName = selector(state, 'userName')
+    const Name =  selector(state, 'Name')
+    const LastName = selector(state, 'LastName')
+    const Email =  selector(state, 'Email')
+    const Age = selector(state, 'Age')
+    const passWord = selector(state, 'passWord')
+    const Genre = selector(state, 'Genre')
+    const telePhone = selector(state,'telePhone')
+    const idDocument = selector(state,'idDocument')
+    return{
+      userName,
+      Name,
+      LastName,
+      Email,
+      Age,
+      passWord,
+      Genre,
+      telePhone,
+      idDocument,
+    }
+  },
+  dispatch =>({
+    onSubmit(userName, Name, LastName, Email, Age, passWord, Genre, telePhone, idDocument) {
+      dispatch(clientActions.createClient(
+        userName,
+        passWord,
+        Genre,
+        Name,
+        Email,
+        LastName,
+        idDocument,
+        telePhone,
+        Age,
+      ));
+    },
+  }),
+)(RegisterForm);
+
+export default RegisterContainer;
 
 
 /*
 
         
-        <nav>
+        <nav> 
           <Link to='/'>
             <button onClick={
               () => {

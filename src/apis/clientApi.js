@@ -8,7 +8,7 @@ const saveClient = (
 	id_document,
 	telephone,
 	age,
-) => fetch('http://localhost:8000/api/v1/cliente/' , {
+) => fetch('http://localhost:8000/api/v1/cliente/', {
 	method: 'POST',
 	headers: {
 		'Content-Type': 'application/json',

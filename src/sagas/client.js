@@ -5,7 +5,7 @@ import {
 } from 'redux-saga/effects';
 
 import saveClient from '../apis/clientApi';
-import * as types from '../types/client'
+import * as types from '../types/client';
 import * as clientActions from '../actions/client';
 
 function* clientGenerator(action) {
@@ -26,6 +26,7 @@ function* clientGenerator(action) {
 		yield call(
 			saveClient,
 			username,
+			password,
 			genre,
 			name,
 			email,
@@ -42,7 +43,7 @@ function* clientGenerator(action) {
 
 function* watchClientCreation() {
 	yield takeLatest(
-		types.CLIENT_CREATED,
+		types.CLIENT_TOGGLE,
 		clientGenerator,
 	);
 }

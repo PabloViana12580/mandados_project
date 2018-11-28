@@ -11,7 +11,7 @@ export const createClient = (
 	telephone = 0,
 	age = 0,
 ) => ({
-	type: types.CLIENT_CREATED,
+	type: types.CLIENT_TOGGLE,
 	payload: {
 		username,
 		password,

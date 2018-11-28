@@ -1,6 +1,6 @@
-import React, {Fragment} from 'react';
-import {connect} from 'react-redux';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import * as actions from '../../actions';
 import Modal from '../CustomComponents/Modal';
 import './logic.css'

@@ -38,6 +38,7 @@ const SimpleModal = ({
       open={modalStatus}
     >
       <div style={getModalStyle()} className={classes.paper}>
+        <h1> hola </h1>
         <button onClick={handleClose} color="primary" >
           
         </button>
@@ -57,7 +58,7 @@ const SimpleModalWrapped = withStyles(styles)(SimpleModal);
 
 const ModalContainer = connect(
   state => ({
-    modalStatus: state.app.modal,
+    modalStatus: state.modal,
   }),
   dispatch => ({
     handleClose() {

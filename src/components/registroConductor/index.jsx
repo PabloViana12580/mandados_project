@@ -1,10 +1,7 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 //import {connect} from 'react-redux';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import uuid from 'uuid-v4';
 import { Field, reduxForm } from 'redux-form';
-import * as actions from '../../actions';
 import CustomImput from '../CustomComponents/Input';
 import './Registro.css'
 

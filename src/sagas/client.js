@@ -26,6 +26,7 @@ function* clientGenerator(action) {
 		yield call(
 			saveClient,
 			username,
+			password,
 			genre,
 			name,
 			email,
@@ -42,7 +43,7 @@ function* clientGenerator(action) {
 
 function* watchClientCreation() {
 	yield takeLatest(
-		types.CLIENT_CREATED,
+		types.CLIENT_TOGGLE,
 		clientGenerator,
 	);
 }

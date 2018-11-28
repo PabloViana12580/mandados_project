@@ -7,16 +7,18 @@ import './index.css';
 
 const InventoryList = ({ products = [] }) => (
   <div>
-      <div class= "titulo">{'Que Manda!'}</div>
-      <ul>
-        {
-          products.length > 0
-            ? products.map(({ id }) => <InventoryItem key={id} id={id} />)
-            : <li>No existen productos en su carreta!</li>
-        }
-      </ul>
-
+      <div className = "imagen"> </div>
+        <div className ="hola">
+        <ul>
+          {
+            products.length > 0
+              ? products.map(({ id }) => <InventoryItem key={id} id={id} />)
+              : <li>No existen productos en su carreta!</li>
+          }
+        </ul>
+        </div>
   </div>
+ 
 );
 
 export default connect(

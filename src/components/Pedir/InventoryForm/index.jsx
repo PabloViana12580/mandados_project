@@ -11,8 +11,8 @@ class InventoryFormDummy extends React.Component {
     const { onSubmit } = this.props;
 
     return (
-      <div>
-           <div class="quisiera">
+      <div className= "inputs">
+           <div className="quisiera">
               <input
                 type="text"
                 placeholder="Quisiera..."
@@ -20,7 +20,7 @@ class InventoryFormDummy extends React.Component {
               />
            </div>
          
-          <div class="cantidad">
+          <div className="cantidad">
               <input
                 type="number"
                 placeholder="Cantidad"
@@ -28,8 +28,8 @@ class InventoryFormDummy extends React.Component {
               />
           </div>
           
-          <div class="button1">
-              <button
+        
+              <button className = "button1"
                 onClick={
                   () => {
                     onSubmit(
@@ -45,8 +45,7 @@ class InventoryFormDummy extends React.Component {
               >
               Agregar
               </button>
-          </div>
-         
+              
       </div>
     );
   }

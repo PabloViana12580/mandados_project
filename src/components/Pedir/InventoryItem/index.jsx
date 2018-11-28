@@ -9,7 +9,7 @@ const InventoryItem = ({
   onClick,
 }) => (
   <div> 
-    <ul>
+ 
     {name}
     {' - '}
     {qty}
@@ -17,7 +17,7 @@ const InventoryItem = ({
     {
         <button onClick={onClick}> Eliminar!</button>
     }
-  </ul>
+  
   </div>
   
 );

@@ -57,7 +57,7 @@ const SimpleModalWrapped = withStyles(styles)(SimpleModal);
 
 const ModalContainer = connect(
   state => ({
-    modalStatus: state.app.modal,
+    modalStatus: state.modal,
   }),
   dispatch => ({
     handleClose() {

@@ -3,6 +3,7 @@ export const PRODUCT_ADDED_TO_CART = 'PRODUCT_ADDED_TO_CART';
 export const USER_ADDED = 'USER_ADDED';
 export const USER_LOGGED = 'USER_LOGGED';
 export const MANDADERO_SELECTED = 'MANDADERO_SELECTED';
+export const DELETED_CART = 'DELETED_CART'
 
 
 

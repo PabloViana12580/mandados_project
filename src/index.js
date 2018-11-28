@@ -10,16 +10,16 @@ import Conductores from './components/Conductores';
 import Login from './components/Login';
 import CartApp from './components/CartApp'
 import Registrar from './components/Registro';
-import RegistrarConductor from './components/RegistroConductor';
-
-
+import RegistrarConductor from './components/registroConductor';
+import ConductoresList from './components/Conductores/ConductoresList'
+import data from './components/Conductores/data/mandaderos.json'
 const store = configureStore();
 
 ReactDOM.render(
   <Provider store = {store}>
     <Router>
     	<div>
-	        <Route exact path="/conductores" component={Conductores} />
+	        <Route exact path="/home" component={ConductorApp} />
 	        <Route exact path="/" component={Login}/>
 	        <Route exact path="/registro" component= {Registrar}/>
 	        <Route exact path="/registroC" component = {RegistrarConductor}/>
@@ -32,5 +32,13 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 );
+
+function ConductorApp(){
+	return(
+		<div>
+		<ConductoresList  mandaderos= {data.mandaderos} />
+		</div>
+	);
+}
 
 registerServiceWorker();

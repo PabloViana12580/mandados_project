@@ -1,0 +1,15 @@
+.botonGG{
+    outline: none !important;
+    border: none;
+    padding: 0.1rem;
+    background-color: orange;
+    border-radius: 1rem;
+
+    font-size: 1.2rem;
+    height: 3rem;
+}
+
+.ConductorListItem{
+    text-align: center;
+    
+}

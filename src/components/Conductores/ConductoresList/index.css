@@ -3,24 +3,31 @@
     flex: 2;
     flex-wrap: wrap;
     flex-direction: row;
-
+    margin-left: 7rem;
+    margin-top: 4rem;
     
 }
-.page-container{
-    width: 1200px;
-    margin: 10px auto;
-    padding: 3px
-}
+
 .ConductorList .ConductorListItem {
     padding: 0.5rem 0.7rem;
     width: 200px;
     background-color: aliceblue;
-  
+    border-radius: 2rem;
+
 }
 
 .ConductorList .ConductorListItem button{
     padding: 0.5rem 0.7rem;
     width: 200px;
-
-  
 }
+
+.imagen {
+    width: 33rem;
+    height: 7rem;
+    background-image: url("../../Images/que_m.png");
+    border-radius: 1rem;
+    margin-left: 32rem;
+    margin-top: 2rem;
+    
+}
+

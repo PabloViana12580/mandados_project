@@ -25,5 +25,5 @@ const InventoryItem = ({
 export default connect(
   (state, { id }) => ({
     ...state.inventory.byId[id],
-  }),
+  })
 )(InventoryItem);

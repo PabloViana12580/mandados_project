@@ -1,16 +1,17 @@
 import React, { Fragment } from 'react';
-import ConductorList from '../ConductorList';
+import ConductoresList from '../ConductoresList';
 import data from '../data/mandadero.json'
 
-const ConductoApp= () =>{
-  return (
-    <div>
-       
-        <ConductorList props = "data"/>
-    </div>
-  );
-}
 
 
+function ConductorApp(){
+    return(
+      <div className = "page-container">
+      <ConductoresList  mandaderos= {data.mandaderos} />
+      </div>
+    );
+  }
 
-export default ConductoApp;
+export default ConductorApp;
+
+

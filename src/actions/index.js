@@ -60,3 +60,32 @@ export const addUser = (
     edad,
   }
 });
+
+
+
+export const selectMandadero = (
+  id,
+  name,
+  last_name
+) => ({
+  type: types.MANDADERO_SELECTED,
+  payload: {
+    id,
+  name,
+  last_name
+  }
+});
+
+
+export const deleteToCart = (
+  id,
+  name,
+  last_name
+)=>({
+  type: types.DELETED_CART,
+  payload:{
+    id,
+    name,
+    last_name
+  }
+})

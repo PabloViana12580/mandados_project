@@ -3,6 +3,8 @@
     flex: 2;
     flex-wrap: wrap;
     flex-direction: row;
+    width: 10rem;
+    height: 10rem;
 
     
 }

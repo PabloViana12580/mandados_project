@@ -5,7 +5,7 @@ import {
 } from 'redux-saga/effects';
 
 import saveClient from '../apis/clientApi';
-import * as types from '../types/client'
+import * as types from '../types/client';
 import * as clientActions from '../actions/client';
 
 function* clientGenerator(action) {

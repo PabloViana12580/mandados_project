@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import App from './App';
 import configureStore from './configureStore';
 import './index.css';
-import Conductores from './components/Conductores/ConductorApp';
+import Conductores from './components/Conductores';
 import Login from './components/Login';
 import CartApp from './components/CartApp'
 import Registrar from './components/Registro';
@@ -19,7 +19,7 @@ ReactDOM.render(
   <Provider store = {store}>
     <Router>
     	<div>
-	        <Route exact path="/conductores" component={Conductores} />
+	        <Route exact path="/mandaderos" component={Conductores} />
 	        <Route exact path="/" component={Login}/>
 	        <Route exact path="/registro" component= {Registrar}/>
 	        <Route exact path="/registroC" component = {RegistrarConductor}/>

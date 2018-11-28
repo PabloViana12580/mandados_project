@@ -5,6 +5,7 @@ import cart, * as fromCart from './cart';
 import clientReducer from './client';
 import modalReducer from './modal';
 import authReducer from './auth';
+import data from './mandador';
 import { reducer as formReducer } from 'redux-form';
 
 const reducer = combineReducers({
@@ -13,6 +14,7 @@ const reducer = combineReducers({
   clientReducer,
   modalReducer,
   authReducer,
+  data,
   form: formReducer,
 });
 

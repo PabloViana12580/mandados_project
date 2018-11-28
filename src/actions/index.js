@@ -21,11 +21,7 @@ export const addToCart = id => ({
     id,
   }
 });
-
-export const selectMandadero = () => ({
-  type: types.MANDADERO_SELECTED,
-});
-
+  
 export const userLogin = (
   user,
   password

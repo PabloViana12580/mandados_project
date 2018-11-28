@@ -27,6 +27,10 @@ const styles = theme => ({
     boxShadow: theme.shadows[5],
     padding: theme.spacing.unit * 4,
   },
+
+  botno:{
+    backgroundColor: theme.palette.background.paper,
+  }
 });
 
 const SimpleModal = ({
@@ -39,9 +43,14 @@ const SimpleModal = ({
       open={modalStatus}
     >
       <div style={getModalStyle()} className={classes.paper}>
-        <h1> hola </h1>
-        <button onClick={handleBehaviour} color="primary" >
-          
+        <h1> Bienvenido a ¡Que Manda! </h1>
+        <p> Esta es una pagina en donde puedes pedir mandados
+         sin que tu tengas que ir a la tienda. Solo escoge
+        un conductor que te parezca adecuado para el tamaño
+        de tu pedido y estara en camino! </p>
+        
+        <button className = {classes.botno} onClick={handleBehaviour} color="primary" >
+          Empecemos!
         </button>
         <SimpleModalWrapped />
       </div>

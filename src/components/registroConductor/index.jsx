@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Field, reduxForm } from 'redux-form';
 import CustomImput from '../CustomComponents/Input';
 import './Registro.css'
+import { Link } from 'react-router-dom';
 
 class RegistroConductor extends React.Component{
   render() {
@@ -102,9 +103,9 @@ class RegistroConductor extends React.Component{
             component={CustomImput}
           />
         </form>
-        
+        <Link to='/'>
         <button className = "btnRegistrar"type="submit">Registrarse</button>
-
+        </Link>
       </div>
     );
   }

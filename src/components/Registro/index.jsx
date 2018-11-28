@@ -6,6 +6,7 @@ import {connect} from 'react-redux';
 import { formValueSelector } from 'redux-form';
 import * as clientActions from '../../actions/client';
 import CustomImput from '../CustomComponents/Input';
+import { Link } from 'react-router-dom';
 
 
 class DummyRegister extends React.Component{
@@ -88,7 +89,7 @@ class DummyRegister extends React.Component{
             component={CustomImput}
           />
         </form>
-        
+        <Link to='/'>
         <button onClick={
           () => {
             onSubmit(
@@ -104,6 +105,8 @@ class DummyRegister extends React.Component{
             )
           }
         } className = "btnRegistrar" type="submit">Registrarse</button>
+
+        </Link>
 
       </div>
     );

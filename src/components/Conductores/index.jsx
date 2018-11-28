@@ -16,7 +16,7 @@ class ConductorList extends Component{
 		<div className= "ConductorListItem">
 			{console.log("esto es: "+ data)}
       <h3> {data.name} {data.last_name} </h3> 
-      <img src= {"https://sites.google.com/site/bobesponjaloerestodoparami/_/rsrc/1340788562881/patricio-estrella/patricio2%20%281%29.jpg"} height={"120"} width={"90"}/>
+      <img src= {"https://i.imgur.com/sohWhy9.jpg"} height={"120"} width={"90"}/>
       <div> {data.description}</div>
       <nav>
       <Link to='/home'>
@@ -34,7 +34,7 @@ class ConductorList extends Component{
 		    
 			    <div className= "ConductorList">
 			    {
-			    	console.log(mandadero),
+			    	
 			      mandadero.map(this.socio)
 					}
 		    	</div>

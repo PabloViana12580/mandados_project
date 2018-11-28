@@ -11,8 +11,9 @@ import Login from './components/Login';
 import CartApp from './components/CartApp'
 import Registrar from './components/Registro';
 import RegistrarConductor from './components/registroConductor';
-import ConductoresList from './components/Conductores/ConductoresList'
-import data from './components/Conductores/data/mandaderos.json'
+import ConductoresList from './components/Conductores/ConductoresList';
+import data from './components/Conductores1/data/mandaderos.json';
+
 const store = configureStore();
 
 ReactDOM.render(
@@ -25,6 +26,7 @@ ReactDOM.render(
 	        <Route exact path="/registro" component= {Registrar}/>
 	        <Route exact path="/registroC" component = {RegistrarConductor}/>
 					<Route exact path="/pedido" component = {CartApp}/>
+
 				
    		</div>
     </Router>
